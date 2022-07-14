@@ -9,20 +9,16 @@ public class Student {
     private Long feesPaid;
     private Long feesTotal;
 
-    public Student(Long id, String name, String grade, Long feesPaid, Long feesTotal) {
+    public Student(Long id, String name, String grade) {
         this.id = id;
         this.name = name;
         this.grade = grade;
-        this.feesPaid = feesPaid;
-        this.feesTotal = feesTotal;
+        feesPaid = 0L;
+        feesTotal = 30000L;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -47,6 +43,10 @@ public class Student {
 
     public void setFeesPaid(Long feesPaid) {
         this.feesPaid = feesPaid;
+    }
+
+    public void updateFeesPaid(Long fee) {
+        this.feesPaid += fee;
     }
 
     public Long getFeesTotal() {
