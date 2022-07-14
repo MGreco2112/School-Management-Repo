@@ -3,7 +3,7 @@ package com.company.classes;
 public class Student {
     //responsible for keeping track of Students demographic and monetary information
 
-    private Long id;
+    private final Long id;
     private String name;
     private String grade;
     private Long feesPaid;

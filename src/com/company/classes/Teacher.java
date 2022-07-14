@@ -1,8 +1,9 @@
 package com.company.classes;
 
 public class Teacher {
+    //responsible for keeping track of Teacher demographic information and their salary value
 
-    private Long id;
+    private final Long id;
     private String name;
     private Long salary;
 
@@ -14,10 +15,6 @@ public class Teacher {
 
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getName() {
