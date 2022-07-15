@@ -6,6 +6,7 @@ public class Teacher {
     private final Long id;
     private String name;
     private Long salary;
+    private Long salaryEarned = 0L;
 
     public Teacher(Long id, String name, Long salary) {
         this.id = id;
@@ -31,5 +32,18 @@ public class Teacher {
 
     public void setSalary(Long salary) {
         this.salary = salary;
+    }
+
+    public Long getSalaryEarned() {
+        return salaryEarned;
+    }
+
+    public void setSalaryEarned(Long salaryEarned) {
+        this.salaryEarned = salaryEarned;
+    }
+
+    public void receiveSalary(Long salary) {
+        this.salaryEarned += salary;
+        School.updateMoneyOut(salary);
     }
 }

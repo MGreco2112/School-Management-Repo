@@ -45,8 +45,9 @@ public class Student {
         this.feesPaid = feesPaid;
     }
 
-    public void updateFeesPaid(Long fee) {
+    public void payFees(Long fee) {
         this.feesPaid += fee;
+        School.updateMoneyIn(feesPaid);
     }
 
     public Long getFeesTotal() {
@@ -56,4 +57,9 @@ public class Student {
     public void setFeesTotal(Long feesTotal) {
         this.feesTotal = feesTotal;
     }
+
+    public Long getRemainingFees() {
+        return feesTotal - feesPaid;
+    }
+
 }

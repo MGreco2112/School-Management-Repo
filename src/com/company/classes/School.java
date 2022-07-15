@@ -8,8 +8,8 @@ public class School {
 
     private List<Teacher> teachers;
     private List<Student> students;
-    private Long moneyIn;
-    private Long moneyOut;
+    private static Long moneyIn;
+    private static Long moneyOut;
 
     public School(List<Teacher> teachers, List<Student> students) {
         this.teachers = teachers;
@@ -46,7 +46,7 @@ public class School {
         return moneyIn;
     }
 
-    public void updateMoneyIn(Long money) {
+    public static void updateMoneyIn(Long money) {
         moneyIn += money;
     }
 
@@ -58,8 +58,9 @@ public class School {
         return moneyOut;
     }
 
-    public void updateMoneyOut(Long money) {
-        moneyOut -= money;
+    public static void updateMoneyOut(Long money) {
+        moneyOut += money;
+        moneyIn -= money;
     }
 
     public void setMoneyOut(Long moneyOut) {
