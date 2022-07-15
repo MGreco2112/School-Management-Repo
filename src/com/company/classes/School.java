@@ -4,14 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class School {
-    private List<Teacher> teachers = new ArrayList<>();
-    private List<Student> students = new ArrayList<>();
+    //responsible for holding Teacher and Student lists and keeping track of money flow
+
+    private List<Teacher> teachers;
+    private List<Student> students;
     private Long moneyIn;
     private Long moneyOut;
 
-    public School(Long moneyIn, Long moneyOut) {
-        this.moneyIn = moneyIn;
-        this.moneyOut = moneyOut;
+    public School(List<Teacher> teachers, List<Student> students) {
+        this.teachers = teachers;
+        this.students = students;
+        moneyIn = 0L;
+        moneyOut = 0L;
+    }
+
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
     }
 
     public List<Teacher> getTeachers() {
@@ -20,6 +28,10 @@ public class School {
 
     public void setTeachers(List<Teacher> teachers) {
         this.teachers = teachers;
+    }
+
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     public List<Student> getStudents() {
@@ -34,12 +46,20 @@ public class School {
         return moneyIn;
     }
 
+    public void updateMoneyIn(Long money) {
+        moneyIn += money;
+    }
+
     public void setMoneyIn(Long moneyIn) {
         this.moneyIn = moneyIn;
     }
 
     public Long getMoneyOut() {
         return moneyOut;
+    }
+
+    public void updateMoneyOut(Long money) {
+        moneyOut -= money;
     }
 
     public void setMoneyOut(Long moneyOut) {
