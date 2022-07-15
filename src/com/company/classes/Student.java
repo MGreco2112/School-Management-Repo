@@ -62,4 +62,8 @@ public class Student {
         return feesTotal - feesPaid;
     }
 
+    public String toString() {
+        return name + ") fees Paid: $" + feesPaid + " out of a total of $" + feesTotal;
+    }
+
 }

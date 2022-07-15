@@ -46,4 +46,8 @@ public class Teacher {
         this.salaryEarned += salary;
         School.updateMoneyOut(salary);
     }
+
+    public String toString() {
+        return name + ") salary: $" + salary;
+    }
 }
